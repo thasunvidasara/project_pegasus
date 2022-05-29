@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+body {
+    background: linear-gradient(to bottom right, rgba(79, 51, 176, 1.0), rgba(210, 53, 165));
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.app {
+    position: relative;
+    height: auto;
+    width: 410px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #000;
+}
+
+.theme-toggler {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggler:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+}
+
+.theme-toggler.active:hover {
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+}
+
+.theme-toggler.active {
+    color: #fff;
+}
+
+.theme-toggler.active::before {
+    background-color: #333;
+}
+
+.theme-toggler::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.app {
+    background-color: #fff;
+}
+
+.app.dark {
+    background-color: #333;
+}
+
+.tables {
+    display: block;
+}
+
+.tab {
+    background-color: #c3eaff;
+    display: flex;
+    height: 60px;
+    width: 95%;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2.5%;
+}
+
+.tab-e {
+    background-color: #ffd5d8;
+    display: flex;
+    height: 60px;
+    width: 95%;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 2.5%;
+}
+
+.tab-e:hover {
+    transform: scale(1.02);
+    background-color: #fa6871;
+}
+
+.tab:hover {
+    transform: scale(1.02);
+    background-color: #72cdfd;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 22px;
+}
+
+ion-icon {
+    font-size: 24px;
+    color: #333;
+}
+
+.next {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p1 {
+    color: #333;
+    font-size: large;
+    margin-left: 15px;
+    width: 258px;
+    margin-top: 5px;
+}
+
+.doctor {
+    width: 370px;
+    height: 217px;
+    background-color: #ffffff;
+    margin-top: 37px;
+    border-radius: 25px;
+    display: flex;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+}
+
+.doctor-profile {
+    width: 57px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: auto;
+    margin-left: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+}
+
+.doctor-info {
+    display: flex;
+}
+
+p2 {
+    margin-top: 30px;
+    margin-left: 8px;
+    color: #333;
+    font-size: 22px;
+}
+
+p3 {
+    width: 300px;
+    margin-top: 65px;
+    margin-left: -119px;
+    color: #333;
+}
+.contact-group{
+    display: flex;
+}
+.contact-btn,
+.message {
+    display: flex;
+    height: 40px;
+    background: #009578;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    overflow: hidden;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background: #008168;
+    transform: scale(1.05);
+}
+
+.contact-btn:active {
+    background: #006e58;
+}
+
+.message:hover {
+    background: #008168;
+    transform: scale(1.05);
+}
+
+.message:active {
+    background: #006e58;
+}
+
+.button__text,
+.button__icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 15px;
+    color: #fff;
+    height: 100%;
+}
+
+.button__icon {
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, 0.08);
+}
+.diseaseIm img{
+    width: 120px;
+    transition: 1s;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.diseaseIm img:hover{
+    transform: scale(1.45);
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+    background-color: #333;
+    border-radius: 10px;
+}
+.disease{
+    width: 95%;
+    margin-left: 2.5%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    background-color: #fff;
+}
+.diseaseN{
+    display: block;
+}
+.diseaseN>span{
+    font-size: 24px;
+    color: #333;
+    margin-left: 15px;
+    margin-top: 25px;
+    display: flex;
+    margin-bottom: 5px;
+    font-family: sans-serif;
+}
+.diseaseN .moreInfo{
+    color: rgb(0, 119, 255);
+    font-size: 14px;
+    border: 0;
+    background-color: transparent   ;
+    margin-left: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+}
+.moreInfo:hover{
+    text-decoration: underline;
+}
+p2{
+    font-size: 15px;
+    margin-left: 15px;
+}
+@media only screen and(max-width:420px){
+    .app{}
+}
