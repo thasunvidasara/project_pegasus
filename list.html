@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="table-container">
+        <h1 class="table-heading">Responsvie Table</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Time taken</th>
+                    <th>Morning / Day / Night</th>
+                    <th>Purchase from</th>
+                    <th>Time to takes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Name">glimepiride </td>
+                    <td data-label="Time taken">Befor Eat</td>
+                    <td data-label="Morning / Day / Night">Morning / Night</td>
+                    <td data-label="Purchase from">Pharmacy</td>
+                    <td data-label="Time to take"><span class="text_open">17 more days</span></td>
+                </tr>
+                <tr>
+                    <td data-label="Name">glimepiride-pioglitazone </td>
+                    <td data-label="Time taken">Befor Eat</td>
+                    <td data-label="Morning / Day / Night">Morning / Night</td>
+                    <td data-label="Purchase from">Pharmacy</td>
+                    <td data-label="Time to take"><span class="text_open">17 more days</span></td>
+                </tr>
+                <tr>
+                    <td data-label="Name">glimepiride-rosiglitazone</td>
+                    <td data-label="Time taken">Befor Eat</td>
+                    <td data-label="Morning / Day / Night">Morning / Night</td>
+                    <td data-label="Purchase from">Pharmacy</td>
+                    <td data-label="Time to take"><span class="text_open">17 more days</span></td>
+                </tr>
+                <tr>
+                    <td data-label="Name">gliclazide.</td>
+                    <td data-label="Time taken">Befor Eat</td>
+                    <td data-label="Morning / Day / Night">Morning / Night</td>
+                    <td data-label="Purchase from">Pharmacy</td>
+                    <td data-label="Time to take"><span class="text_open">17 more days</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #32312f;
+        font-family: sans-serif;
+    }
+    .table-container{
+        padding: 0 10%;
+        margin: 40px auto 0;
+    }
+    .table-heading{
+        font-size: 40px;
+        text-align: center;
+        color: #f1f1f1;
+        margin-bottom: 40px;
+    }
+    .table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .table thead{
+        background: #ee2828;
+    }
+    .table thead tr th{
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.35px;
+        color: #fff;
+        opacity: 1;
+        padding: 12px;
+        vertical-align: top;
+        border: 1px solid #dee2e685;
+    }
+    .table tbody tr td{
+        font-size: 14px;
+        letter-spacing: 0.35px;
+        font-weight: normal;
+        color: #f1f1f1;
+        background-color: #3c3f44;
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #dee2e685;
+    }
+    .table .text_open{
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 00.35px;
+        color: #FF1046;
+    }
+    .table tbody tr td .btn{
+        width: 130px;
+        text-decoration: none;
+        line-height: 35px;
+        display: inline-block;
+        background-color: #FF1046;
+        font-weight: medium;
+        color: #fff;
+        text-align: center;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        font-size: 14px;
+        opacity: 1;
+    }
+    @media(max-width:768px){
+        .table thead{
+            display: none;
+        }
+        .table, .table tbody,.table tr,.table td{
+            display: block;
+            width: 100%;
+        }
+        .table tr{
+            margin-bottom: 15px;
+        }
+        .table tbody tr td{
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+        .table td::before{
+            content: attr(data-label);
+            position: absolute;
+            left: 0;
+            width: 50%;
+            padding-left: 15px;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: left;
+        }
+    }
+</style>
+</html>

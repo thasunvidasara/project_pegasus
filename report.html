@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <title>Doctor's Advice - PEGASUS</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="app">
+
+            <a href="index.html">
+                <div class="main-menu">
+                    <ion-icon class="main-icon" name="chevron-back-outline"></ion-icon>
+                </div>
+            </a>
+
+            <div class="theme-toggler active">
+                <i class="toggler-icon"></i>
+            </div>
+
+            <div class="display-screen">
+                <div id="display"></div>
+            </div>
+
+            <div class="body-nature">
+                <div class="title">
+                    <p4>Last Checked</p4>
+                </div>
+                <div class="images">
+                    <div class="img-box"><img src="images/upload1.png"></div>
+                    <div class="img-box"><img src="images/upload2.png"></div>
+                    <div class="img-box"><img src="images/upload3.png"></div>
+                    <div class="img-box"><img src="images/upload4.png"></div>
+                    <div class="img-box"><img src="images/upload5.png"></div>
+                </div>
+            </div>
+
+
+            <main>
+                <div class="main__container">
+
+                    <div class="charts">
+                        <div class="charts__left">
+                            <div class="charts__left__title">
+                                <div>
+                                    <h1>Clinic Reports</h1>
+                                    <p>ECG and scan reports, Blood presure, Blood and urine test reports </p>
+                                </div>
+                                <ion-icon name="document-text-outline"></ion-icon>
+                            </div>
+                            <div class="tab">
+                                <div class="ecg">
+                                    <div class="icon"><ion-icon name="scan-outline"></ion-icon></div>
+                                    <t class="title">ECG and Scan Reports</t>
+                                    <div class="open"><ion-icon name="open-outline"></ion-icon></div>
+                                </div>
+                                <div class="blood">
+                                    <div class="icon"><ion-icon name="logo-ionic"></ion-icon></div>
+                                    <t class="title">Blood Presure</t>
+                                    <div class="open"><ion-icon name="open-outline"></ion-icon></div>
+                                </div>
+                                <div class="reports">
+                                    <div class="icon"><ion-icon name="document-outline"></ion-icon></div>
+                                    <t class="title">Blood and Urine Reports</t>
+                                    <div class="open"><ion-icon name="open-outline"></ion-icon></div>
+                                </div>
+                                <div class="x-ray">
+                                    <div class="icon"><ion-icon name="finger-print-outline"></ion-icon></div>
+                                    <t class="title">X-ray scans</t>
+                                    <div class="open"><ion-icon name="open-outline"></ion-icon></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="charts__right">
+                            <div class="charts__right__title">
+                                <div>
+                                    <h1>Daily Reports</h1>
+                                    <p>Body nature, Body temperature, Weight</p>
+                                </div>
+                                <ion-icon name="document-text-outline"></ion-icon>
+                            </div>
+
+                            <div class="charts__right__cards">
+                                <div class="group"><div class="card1">
+                                    <h1>Body nature</h1>
+                                    <button class="p7">Get it</button>
+                                </div>
+
+                                <div class="card2">
+                                    <h1>Body temperature</h1>
+                                    <div class="p1"
+                                        data-tooltip="Your body temperature is 98.2 Fahrenheit, which is 36.78 in Celsius.">
+                                        <p1>98.2 F</p1>
+                                    </div>
+                                </div></div>
+
+                                <div class="card3">
+                                    <h1>Amount of fluid consumed</h1>
+                                    <p>6.7 L</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        outline: 0;
+        transition: all 0.5s ease;
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    body {
+        background-image: linear-gradient(to bottom right, rgba(79, 51, 176, 1.0), rgba(210, 53, 165));
+    }
+
+    .container {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        place-items: center;
+    }
+
+    .app {
+        position: relative;
+        height: auto;
+        width: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 30px #000;
+        max-width: 80%;
+    }
+
+    .main-menu {
+        position: absolute;
+        top: 15px;
+        left: 30px;
+        background-color: #33333321;
+        cursor: pointer;
+        display: flex;
+        z-index: 1;
+        font-size: 22px;
+        width: 31px;
+        height: 31px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+    }
+    .main-menu.dark{
+        background: #ffffff21;
+    }
+    .main-menu:hover{
+        background-color: #3333339d;
+        transform: scale(1.1);
+    }
+    .main-menu.dark:hover{
+        background: #ffffff9d;
+    }
+    .main-icon{
+        top: 0;
+        left: -1px;
+        color: #333;
+    }
+    .main-icon.dark{
+        color: #fff;
+    }
+
+    .theme-toggler {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: #333;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .theme-toggler:hover {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    }
+
+    .theme-toggler.active:hover {
+        box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .theme-toggler.active {
+        color: #fff;
+    }
+
+    .theme-toggler.active::before {
+        background-color: #333;
+    }
+
+    .theme-toggler::before {
+        content: '';
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: #fff;
+        z-index: -1;
+    }
+
+    .app {
+        background-color: #fff;
+    }
+
+    .app.dark {
+        background-color: #333;
+    }
+
+    /*main*/
+    main {
+        background: #f3f4f6;
+        grid-area: main;
+        overflow-y: auto;
+        margin-top: 44px;
+        border-radius: 25px;
+    }
+
+    .main__container {
+        padding: 20px 35px;
+        height: auto;
+    }
+
+    .main__title {
+        display: flex;
+        align-items: center;
+    }
+
+    .main__title>img {
+        max-height: 100px;
+        object-fit: contain;
+        margin-right: 20px;
+    }
+
+    .main__greeting>h1 {
+        font-size: 24px;
+        color: #2e4a66;
+        margin-bottom: 5px;
+    }
+
+    .main__greeting>p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #a5aaad;
+    }
+
+    .main__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 30px;
+        margin: 20px 0;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 70px;
+        padding: 25px;
+        border-radius: 5px;
+        background: #ffffff;
+        box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+    }
+
+    .card_inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card_inner>span {
+        font-size: 25px;
+    }
+
+    .charts {
+        display: flex;
+        height: auto;
+    }
+
+    .charts__left {
+        padding: 25px;
+        border-radius: 5px;
+        margin-right: 45px;
+        background: #ffffff;
+        box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+        width: 50%;
+        height: auto;
+    }
+
+    .charts__left__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .charts__left__title>div>h1 {
+        font-size: 24px;
+        color: #2e4a66;
+        margin-bottom: 5px;
+    }
+
+    .charts__left__title>div>p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #a5aaad;
+    }
+
+    .charts__left__title>ion-icon {
+        color: #302f2f;
+        font-size: 25px;
+        background: #ffc100;
+        border-radius: 200px 0px 200px 200px;
+        -moz-border-radius: 200px 0px 200px 200px;
+        -webkit-border-radius: 200px 0px 200px 200px;
+        border: 0px solid #000000;
+        padding: 9px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        font-weight: 999;
+    }
+
+    .charts__right {
+        padding: 25px;
+        border-radius: 5px;
+        background: #ffffff;
+        box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+    }
+
+    .charts__right__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .charts__right__title>div>h1 {
+        font-size: 24px;
+        color: #2e4a66;
+        margin-bottom: 5px;
+    }
+
+    .charts__right__title>div>p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #a5aaad;
+    }
+
+    .charts__right__title>ion-icon {
+        color: #ffffff;
+        font-size: 25px;
+        background: #39447a;
+        border-radius: 200px 0px 200px 200px;
+        -moz-border-radius: 200px 0px 200px 200px;
+        -webkit-border-radius: 200px 0px 200px 200px;
+        border: 0px solid #000000;
+        padding: 9px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        font-weight: 999;
+    }
+
+    .charts__right__cards {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .charts__right__cards>h1{
+        margin-top: -17px;
+    }
+    .group{
+        display: flex;
+        gap: 22px;
+        margin-bottom: 18px;
+    }
+    .card1 {
+        background: #d1ecf1;
+        color: #35a4ba;
+        text-align: center;
+        padding: 25px;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 50%;
+    }
+
+    .card1>h1{
+        margin-top: -18px;
+        font-size: 24px;
+    }
+
+    .card2>h1{
+        margin-top: -18px;
+        font-size: 24px;
+    }
+
+    .card3>h1{
+        margin-top: -18px;
+        font-size: 24px;
+    }
+    
+    .card2 {
+        background: #d2f9ee;
+        color: #38e1b0;
+        text-align: center;
+        padding: 25px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .card3 {
+        background: #d6d8d9;
+        color: #3a3e41;
+        text-align: center;
+        padding: 25px;
+        border-radius: 5px;
+        font-size: 14px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    .p1 {
+        width: 70px;
+        height: 20px;
+        line-height: 18px;
+        border-radius: 25px;
+        transform: scale(1.2);
+        font-size: 14px;
+        margin-top: 10%;
+        cursor: pointer;
+        background-color: #00ffb7;
+        color: #333;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 600;
+    }
+
+    .p1::before,
+    .p1::after {
+        --scale: 0;
+        --arrow-size: 20px;
+        --tooltip-color: #00ffb7;
+        --tooltip-width: 80px;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+        transition: 150ms transform;
+        transform-origin: bottom center;
+        box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .p1::before {
+        --translate-y: calc(-100% - var(--arrow-size));
+
+        content: attr(data-tooltip);
+        color: #333;
+        padding: .5rem;
+        border-radius: .3rem;
+        text-align: center;
+        width: max-content;
+        max-width: 200%;
+        background: var(--tooltip-color);
+        box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .p1:hover::before,
+    .p1:hover::after {
+        --scale: 1;
+        box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .p1::after {
+        --translate-y: calc(-1 * var(--arrow-size));
+        box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+
+        content: '';
+        border: var(--arrow-size) solid transparent;
+        border-top-color: var(--tooltip-color);
+        transform-origin: top center;
+
+    }
+
+    .p7 {
+        width: 70px;
+        height: 20px;
+        line-height: 18px;
+        border-radius: 25px;
+        transform: scale(1.2);
+        font-size: 14px;
+        margin-top: 34px;
+        margin-bottom: -15px;
+        cursor: pointer;
+        background-color: #00d5ff;
+        color: #333;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 600;
+        border: 0;
+    }
+
+    .p7:hover {
+        transform: scale(1.4);
+    }
+
+    .body-nature {
+        background-color: #c2c0c0;
+        margin-top: 38px;
+        border-radius: 25px;
+        display: none;
+    }
+
+    .title {
+        padding-top: 15px;
+        padding-left: 25px;
+        padding-bottom: 15px;
+        width: 15%;
+        border-radius: 15px;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    p4 {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgba(51, 51, 51, 0.644);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    p4:hover {
+        background-color: #333;
+    }
+
+    .body-nature.active {
+        display: block;
+    }
+
+    .img-box {
+        width: 240px;
+        height: 240px;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .images {
+        display: flex;
+        width: 100%;
+        gap: 7px;
+        margin-left: 7px;
+        padding-bottom: 10px;
+    }
+
+    img {
+        width: 452px;
+    }
+
+    .card3>p {
+        width: 100px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 25px;
+        color: #333;
+        margin-bottom: -15px;
+    }
+    .tab{
+        height: auto;
+    }
+    .ecg:hover,.blood:hover,.reports:hover,.x-ray:hover{
+        transform: scale(1.05);
+        background-color:#56c1fa ;
+    }
+    .ecg, .blood, .reports, .x-ray{
+        background-color: #c3eaff;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        height: 60px;
+        width: 370px;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .title{
+        position: relative;
+        margin-left: -7px;
+        margin-top: 6px;
+        color: #333;
+        width: 225px;
+    }
+    .icon{
+        font-size: 24px;
+        color: #333;
+        margin-top: 18px;
+        margin-left: 18px;
+    }
+    .open{
+        font-size: 24px;
+        margin-top: 18px;
+        margin-left: 65px;
+    }
+
+    @media only screen and (max-width:1200px){
+        .app{
+            max-width: 85%;
+        }
+    }
+    @media only screen and (max-width:1100px){
+        .app{
+            max-width: 90%;
+        }
+        .ecg, .blood, .reports, .x-ray{
+            width: 320px;
+        }
+        .title{
+            font-size: 16px;
+        }
+        .open{
+            margin-left: 22px;
+            font-size: 20px;
+        }
+        .icon{
+            font-size: 20px;}
+    }
+    @media only screen and (max-width:980px){
+        .app{
+            max-width: 95%;
+        }
+        .ecg, .blood, .reports, .x-ray{
+            width: 320px;
+        }
+        .title{
+            font-size: 16px;
+        }
+        .open{
+            margin-left: 22px;
+            font-size: 20px;
+        }
+        .icon{
+            
+            font-size: 20px;
+        }
+        .charts__left{
+            margin-right: 20px;
+            margin-left: -10px;
+        }
+    }
+    @media only screen and (max-width:840px){
+        .app{
+            max-width: 95%;
+        }
+        .main__container{
+            display: block;
+        }
+        .ecg, .blood, .reports, .x-ray{
+            width: 90%;
+        }
+        .title{
+            font-size: 16px;
+        }
+        .open{
+            margin-left:130px;
+            font-size: 20px;
+        }
+        .icon{
+            margin-left: 23px;
+            font-size: 20px;
+        }
+        .charts{
+            display: block;
+        }
+        .charts__left{
+            width: 100%;
+            margin-bottom: 35px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+    @media only screen and (max-width:672px){
+        .open{
+            margin-left: 110px;
+        }
+    }
+    @media only screen and (max-width:642px){
+        .open{
+            margin-left: 100px;
+        }
+    }
+    @media only screen and (max-width:632px){
+        .open{
+            margin-left: 80px;
+        }
+    }
+    @media only screen and (max-width:612px){
+        .open{
+            margin-left: 50px;
+        }
+    }
+    @media only screen and (max-width:600px){
+        .open{
+            margin-left: 90px;
+        }
+        .icon{
+            margin-left: 12px;
+        }
+        .title{
+            font-size: 13.3px;
+        }
+        .ecg, .blood, .reports, .x-ray{
+            width: 98%;
+        }
+        .tab{
+            width: 100%;
+        }
+    }
+    @media only screen and (max-width:566px){
+        .open{
+            margin-left: 70px;
+        }
+    }
+    @media only screen and (max-width:526px){
+        .open{
+            margin-left: 40px;
+        }
+        .charts__right__cards .card2{
+            margin-right: -10px;
+        }
+        .charts__right__cards .card2>h1{
+            font-size: 21px;
+        }
+    }
+    @media only screen and (max-width:498px){
+        .open{
+            margin-left: 10px;
+        }
+        .charts__right__cards .card2>h1{
+            font-size: 20px;
+        }
+    }
+    @media only screen and (max-width:468px){
+        .charts__right__cards .card2>h1{
+            font-size: 18px;
+        }
+        .charts__right__cards .card3>h1{
+            font-size: 18px;
+        }
+        .open{
+            margin-left: -10px;
+        }
+    }
+    @media only screen and (max-width:454px){
+        .charts__right__cards .card2>h1{
+            font-size: 14px;
+        }
+        .charts__right__cards .card3>h1{
+            font-size: 16px;
+        }
+        .open{
+            margin-left: -20px;
+        }
+    }
+</style>
+
+</html>

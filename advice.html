@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Doctor's Advice - PEGASUS</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="app">
+
+            <a href="index.html"><div class="main-menu">
+                <ion-icon class="main-icon" name="chevron-back-outline"></ion-icon>
+            </div></a>
+
+            <div class="theme-toggler active">
+                <i class="toggler-icon"></i>
+            </div>
+
+            <div class="display-screen">
+                <div id="display"></div>
+            </div>
+
+            <!--calender-->
+            <div class="calender-main">
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <span class="month-picker" id="month-picker">February</span>
+                        <div class="year-picker">
+                            <span class="year-change" id="prev-year">
+                                <pre><</pre>
+                            </span>
+                            <span id="year">2021</span>
+                            <span class="year-change" id="next-year">
+                                <pre>></pre>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="calendar-body">
+                        <div class="calendar-week-day">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div class="calendar-days"></div>
+                    </div>
+                    <div class="month-list"></div>
+                </div>
+            </div>
+
+            <!--advice-box-->
+            <div class="advice-box">
+                <i id="close" class="bx bx-x close"></i>
+                <div class="profile-text">
+                    <img src="doctor.png" alt="">
+                    <div class="text">
+                        <span class="name">Dr.Example</span>
+                    </div>
+                </div>
+                <div class="message-recieved">
+                    <t1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus a error exercitationem.
+                        Corrupti dolor perferendis aliqui</t1>
+                </div>
+                <button class="get-advice">Get an Advice</button>
+                <div class="get-advice-open">
+                    <input type="text" placeholder="What's your problem...">
+                    <p class="chatbox__send--footer">Send</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        outline: 0;
+        transition: all 0.5s ease;
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    body {
+        background-image: linear-gradient(to bottom right, rgba(79, 51, 176, 1.0), rgba(210, 53, 165));
+    }
+
+    .container {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        place-items: center;
+    }
+
+    .app {
+        position: relative;
+        height: auto;
+        width: auto;
+        padding: 1.25rem;
+        border-radius: 0.625rem;
+        box-shadow: 0 0 1.875rem #000;
+    }
+
+    .main-menu {
+        position: absolute;
+        top: 0.9375rem;
+        left: 1.875rem;
+        background-color: #33333321;
+        cursor: pointer;
+        display: flex;
+        z-index: 1;
+        font-size: 1.375rem;
+        width: 1.9375rem;
+        height: 1.9375rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1.5625rem;
+    }
+    .main-menu.dark{
+        background: #ffffff21;
+    }
+    .main-menu:hover{
+        background-color: #3333339d;
+        transform: scale(1.1);
+    }
+    .main-menu.dark:hover{
+        background: #ffffff9d;
+    }
+    .main-icon{
+        top: 0;
+        left: -0.0625rem;
+        color: #333;
+    }
+    .main-icon.dark{
+        color: #fff;
+    }
+    .theme-toggler {
+        position: absolute;
+        top: 1.875rem;
+        right: 1.875rem;
+        color: #333;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .theme-toggler:hover {
+        box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    .theme-toggler.active:hover {
+        box-shadow: 0 0.3125rem 0.625rem rgba(255, 255, 255, 0.3);
+    }
+
+    .theme-toggler.active {
+        color: #fff;
+    }
+
+    .theme-toggler.active::before {
+        background-color: #333;
+    }
+
+    .theme-toggler::before {
+        content: '';
+        height: 1.875rem;
+        width: 1.875rem;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: #fff;
+        z-index: -1;
+    }
+
+    .app {
+        background-color: #fff;
+    }
+
+    .app.dark {
+        background-color: #333;
+    }
+
+    .calendar {
+        height: max-content;
+        width: max-content;
+        border-radius: 1.875rem;
+        padding: 1.25rem;
+        position: relative;
+        overflow: hidden;
+        background-color: #151426;
+        box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, .3);
+        margin-top: 2.5rem;
+    }
+
+    .light .calendar {
+        box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, .3);
+    }
+
+    .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5625rem;
+        font-weight: 600;
+        color: #fff;
+        padding: 0.625rem;
+    }
+
+    .calendar-body {
+        padding: 0.625rem;
+    }
+
+    .calendar-week-day {
+        height: 50px;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        font-weight: 600;
+    }
+
+    .calendar-week-day div {
+        display: grid;
+        place-items: center;
+        color: #79788c;
+    }
+
+    .calendar-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2px;
+        color: #fff;
+    }
+
+    .calendar-days div {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        position: relative;
+        cursor: pointer;
+        animation: to-top 1s forwards;
+    }
+
+    .calendar-days div span {
+        position: absolute;
+    }
+
+    .calendar-days div:hover span {
+        transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    }
+
+    .calendar-days div span:nth-child(1),
+    .calendar-days div span:nth-child(3) {
+        width: 2px;
+        height: 0;
+        background-color: #fff;
+    }
+
+    .calendar-days div:hover span:nth-child(1),
+    .calendar-days div:hover span:nth-child(3) {
+        height: 100%;
+    }
+
+    .calendar-days div span:nth-child(1) {
+        bottom: 0;
+        left: 0;
+    }
+
+    .calendar-days div span:nth-child(3) {
+        top: 0;
+        right: 0;
+    }
+
+    .calendar-days div span:nth-child(2),
+    .calendar-days div span:nth-child(4) {
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+    }
+
+    .calendar-days div:hover span:nth-child(2),
+    .calendar-days div:hover span:nth-child(4) {
+        width: 100%;
+    }
+
+    .calendar-days div span:nth-child(2) {
+        top: 0;
+        left: 0;
+    }
+
+    .calendar-days div span:nth-child(4) {
+        bottom: 0;
+        right: 0;
+    }
+
+    .calendar-days div:hover span:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .calendar-days div:hover span:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+
+    .calendar-days div:hover span:nth-child(4) {
+        transition-delay: 0.6s;
+    }
+
+    .calendar-days div.curr-date,
+    .calendar-days div.curr-date:hover {
+        background-color: #0079eb;
+        color: #fff;
+        border-radius: 50%;
+    }
+
+    .calendar-days div.curr-date span {
+        display: none;
+    }
+
+    .month-picker {
+        padding: 5px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .month-picker:hover {
+        background-color: #323048;
+    }
+
+    .year-picker {
+        display: flex;
+        align-items: center;
+    }
+
+    .year-change {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+
+    .year-change:hover {
+        background-color: #323048;
+    }
+
+    .month-list {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #141529;
+        padding: 20px;
+        grid-template-columns: repeat(3, auto);
+        gap: 5px;
+        display: grid;
+        transform: scale(1.5);
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .month-list.show {
+        transform: scale(1);
+        visibility: visible;
+        pointer-events: visible;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .month-list>div {
+        display: grid;
+        place-items: center;
+    }
+
+    .month-list>div>div {
+        width: 100%;
+        padding: 5px 20px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .month-list>div>div:hover {
+        background-color: #323048;
+    }
+
+    @keyframes to-top {
+        0% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    /*advice-box-style*/
+    .advice-box {
+        background-color: #141529;
+        height: auto;
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 20px;
+        margin-left: auto;
+        overflow: hidden;
+    }
+
+    .profile-text img {
+        width: 60px;
+        border-radius: 50px;
+        margin-top: 10px;
+        margin-left: 13px;
+    }
+
+    .profile-text .text {
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 15px;
+        display: block;
+        height: 60px;
+        width: 118px;
+        margin-top: -56px;
+        margin-left: 82px;
+    }
+
+    .profile-text .text .name {
+        font-size: 18px;
+    }
+
+    .message-recieved {
+        color: #141529;
+        font-family: sans-serif;
+        width: 300px;
+        height: auto;
+        background-color: #fff;
+        text-align: center;
+        margin-left: 83px;
+        margin-top: -30px;
+        border-radius: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: block;
+    }
+
+    .get-advice {
+        width: 135px;
+        height: 35px;
+        background: linear-gradient(90deg, #00d2ff, #3a7bd5, #00d2ff);
+        border-radius: 25px;
+        border: 0;
+        margin-left: 246px;
+        margin-top: 9px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    .get-advice:hover {
+        transform: scale(1.03);
+    }
+
+    .get-advice-open.active {
+        padding: 20px 20px;
+        box-shadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s ease;
+        opacity: 1;
+        height: auto;
+    }
+
+    .get-advice-open {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        background: linear-gradient(268.91deg, #581B98 -2.14%, #9C1DE7 99.69%);
+        box-shadow: 0;
+        margin-top: 0;
+        transition: all 0.5s ease;
+        opacity: 0;
+        overflow: hidden;
+        height: 0;
+    }
+
+    .get-advice-open input {
+        border: none;
+        padding: 10px 70px;
+        border-radius: 30px;
+    }
+
+    .chatbox__send--footer {
+        color: white;
+        background-color: #0079eb;
+        cursor: pointer;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 71px;
+        height: 34px;
+        border-radius: 50px;
+    }
+</style>
+
+</html>

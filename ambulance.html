@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <title>Doctor's Advice - PEGASUS</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="app">
+
+            <a href="index.html"><div class="main-menu">
+                <ion-icon class="main-icon" name="chevron-back-outline"></ion-icon>
+            </div></a>
+
+            <div class="theme-toggler active">
+                <i class="toggler-icon"></i>
+            </div>
+
+            <div class="display-screen">
+                <div id="display"></div>
+            </div>
+            <div class="content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5590.798103760415!2d80.5821393511422!3d5.949199095669417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae138fec13b027d%3A0x8e9f69628311a6ac!2sThalpawila%20Mihindu%20Model%20Primary%20School!5e1!3m2!1sen!2sus!4v1653711845984!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <button class="btn">Send your respond</button></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        outline: 0;
+        transition: all 0.5s ease;
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    body {
+        background-image: linear-gradient(to bottom right, rgba(79, 51, 176, 1.0), rgba(210, 53, 165));
+    }
+
+    .container {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        place-items: center;
+    }
+
+    .app {
+        position: relative;
+        height: auto;
+        width: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 30px #000;
+    }
+
+    .main-menu {
+        position: absolute;
+        top: 15px;
+        left: 30px;
+        background-color: #33333321;
+        cursor: pointer;
+        display: flex;
+        z-index: 1;
+        font-size: 22px;
+        width: 31px;
+        height: 31px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+    }
+    .main-menu.dark{
+        background: #ffffff21;
+    }
+    .main-menu:hover{
+        background-color: #3333339d;
+        transform: scale(1.1);
+    }
+    .main-menu.dark:hover{
+        background: #ffffff9d;
+    }
+    .main-icon{
+        top: 0;
+        left: -1px;
+        color: #333;
+    }
+    .main-icon.dark{
+        color: #fff;
+    }
+    .theme-toggler {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: #333;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .theme-toggler:hover {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    }
+
+    .theme-toggler.active:hover {
+        box-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .theme-toggler.active {
+        color: #fff;
+    }
+
+    .theme-toggler.active::before {
+        background-color: #333;
+    }
+
+    .theme-toggler::before {
+        content: '';
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: #fff;
+        z-index: -1;
+    }
+
+    .app {
+        background-color: #fff;
+    }
+
+    .app.dark {
+        background-color: #333;
+    }
+    iframe{
+        margin-top: 41px;
+        margin-right: auto;
+        margin-left: auto;
+        width: 600px;
+        display: block;
+    }
+    iframe.dark{
+        filter: invert(100);
+    }
+    .btn{
+        width: 200px;
+        height: 45px;
+        background: linear-gradient(90deg,#0162c8,#55e7fc);
+        border: 0;
+        text-align: center;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-right: auto;
+        margin-bottom: -10px;
+        margin-left: auto;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    .content{
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+    }
+    sapn{
+        position: absolute;
+        background:#fff;
+        transform: translate(-50%,-50%);
+        pointer-events: none;
+        border-radius: 50%;
+        animation: animate 1s linear infinite;
+    }
+    @keyframes animate{
+        0%{
+            width: 0px;
+            height: 0px;
+            opacity: 0.5;
+        }
+        100%{
+            width: 500px;
+            height: 500px;
+            opacity: 0;
+        }
+    }
+</style>
+</html>
