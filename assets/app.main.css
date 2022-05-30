@@ -146,91 +146,7 @@ p1 {
     margin-top: 5px;
 }
 
-.doctor {
-    width: 370px;
-    height: 217px;
-    background-color: #ffffff;
-    margin-top: 37px;
-    border-radius: 25px;
-    display: flex;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
-}
 
-.doctor-profile {
-    width: 57px;
-    border-radius: 50px;
-    margin-top: 20px;
-    margin-bottom: auto;
-    margin-left: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
-}
-
-.doctor-info {
-    display: flex;
-}
-
-p2 {
-    margin-top: 30px;
-    margin-left: 8px;
-    color: #333;
-    font-size: 22px;
-}
-
-p3 {
-    width: 300px;
-    margin-top: 65px;
-    margin-left: -119px;
-    color: #333;
-}
-.contact-group{
-    display: flex;
-}
-.contact-btn,
-.message {
-    display: flex;
-    height: 40px;
-    background: #009578;
-    border: none;
-    outline: none;
-    border-radius: 25px;
-    overflow: hidden;
-    font-family: "Quicksand", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.contact-btn:hover {
-    background: #008168;
-    transform: scale(1.05);
-}
-
-.contact-btn:active {
-    background: #006e58;
-}
-
-.message:hover {
-    background: #008168;
-    transform: scale(1.05);
-}
-
-.message:active {
-    background: #006e58;
-}
-
-.button__text,
-.button__icon {
-    display: inline-flex;
-    align-items: center;
-    padding: 0 15px;
-    color: #fff;
-    height: 100%;
-}
-
-.button__icon {
-    font-size: 1.5em;
-    background: rgba(0, 0, 0, 0.08);
-}
 .diseaseIm img{
     width: 120px;
     transition: 1s;
@@ -286,6 +202,48 @@ p2{
     font-size: 15px;
     margin-left: 15px;
 }
-@media only screen and(max-width:420px){
-    .app{}
+@media only screen and (max-width:420px){
+    .app{
+        max-width: 94%;
+        overflow: hidden;
+    }
+    .next{
+      display: none;
+    }
+    .disease{
+      display: block;
+    }
+    .diseaseIm{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tab,.tab-e{
+      display: none;
+    }
+    .diseaseIm>img{
+      width: 50%;
+    }
+    .diseaseN{
+      margin-top: -29px;
+    }
+    .diseaseN>span{
+      display: flex;
+      justify-content: center;
+    }
+    .diseaseN>p2{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      width: 90%;
+    }
+    .diseaseN>a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .moreInfo{
+      margin-bottom: 12px;
+    }
 }
